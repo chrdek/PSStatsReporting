@@ -14,7 +14,11 @@
 __Prerequisites:__
 1. For the *.chm generator to work, the [Microsoft HTML Help Workshop](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/htmlhelp/microsoft-html-help-downloads) executables are required.
 2. Also, IE 11 or later is required to be installed in your windows system.
-3. You will need to install modules AzFnUtil,LmbdUtil and ImageUtils for the complete application to operate properly.
+3. You will need to install modules [AzFnUtil](https://www.powershellgallery.com/packages/AzFnUtil/1.0.1),[LmbdUtil](https://www.powershellgallery.com/packages/LmbdUtil/1.0.1) and [ImageUtils](https://www.powershellgallery.com/packages/ImagesUtil/1.1.0.0) for the complete application to operate properly.
+To Install Run:
+```powershell
+Install-Module -Name <ModuleName>
+```
 
 <br>
 
