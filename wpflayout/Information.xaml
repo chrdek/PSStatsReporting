@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ToolTip x:Key="DirectoriesInfo" DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}">
+		<StackPanel>
+		<Label FontWeight="Bold" FontSize="10" Content="Directories"/>
+		<TextBlock Text="Display for default system directories and their respective size. The pre-set directory values are: Downloads,Desktop,Chrome Packages,Pictures,Chrome Cache,\r\n Temporary Files \r\n Music. The defaults can be configured in code." TextWrapping="Wrap" Width="200" />
+		</StackPanel>
+	</ToolTip>
+	<ToolTip x:Key="ProgramsInfo" DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}">
+		<StackPanel>
+		<Label FontWeight="Bold" FontSize="10" Content="Programs"/>
+		<TextBlock Text="All installed programs. Values retrieved from corresponding registry entries." TextWrapping="Wrap" Width="200" />
+		</StackPanel>
+	</ToolTip>
+	<ToolTip x:Key="PartitionsInfo" DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}">
+		<StackPanel>
+		<Label FontWeight="Bold" FontSize="10" Content="Partitions"/>
+		<TextBlock Text="Display for partitions per enumerated Hard Disk Drives. OS and extended partitions are loaded per disk." TextWrapping="Wrap" Width="200" />
+		</StackPanel>
+	</ToolTip>
+	<ToolTip x:Key="ProcessesInfo" DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}">
+		<StackPanel>
+		<Label FontWeight="Bold" FontSize="10" Content="Processes"/>
+		<TextBlock Text="Displays all microsoft running processes that have size larger than 20 megabytes. Process name and size values can be configured in the relevant code file." TextWrapping="Wrap" Width="200" />
+		</StackPanel>
+	</ToolTip>
+</ResourceDictionary>

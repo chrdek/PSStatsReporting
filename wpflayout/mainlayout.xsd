@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/winfx/2006/xaml" />
+  <xs:element name="Window">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Window.Resources">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ControlTemplate">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Border">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ContentPresenter">
+                            <xs:complexType>
+                              <xs:attribute ref="x:Name" use="required" />
+                              <xs:attribute name="ContentTemplate" type="xs:string" use="required" />
+                              <xs:attribute name="Content" type="xs:string" use="required" />
+                              <xs:attribute name="ContentStringFormat" type="xs:string" use="required" />
+                              <xs:attribute name="Focusable" type="xs:string" use="required" />
+                              <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                              <xs:attribute name="Margin" type="xs:string" use="required" />
+                              <xs:attribute name="RecognizesAccessKey" type="xs:string" use="required" />
+                              <xs:attribute name="SnapsToDevicePixels" type="xs:string" use="required" />
+                              <xs:attribute name="VerticalAlignment" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="x:Name" use="required" />
+                        <xs:attribute name="BorderBrush" type="xs:string" use="required" />
+                        <xs:attribute name="BorderThickness" type="xs:string" use="required" />
+                        <xs:attribute name="Background" type="xs:string" use="required" />
+                        <xs:attribute name="SnapsToDevicePixels" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ControlTemplate.Triggers">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Trigger">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Setter">
+                                  <xs:complexType>
+                                    <xs:attribute name="Property" type="xs:string" use="required" />
+                                    <xs:attribute name="TargetName" type="xs:string" use="optional" />
+                                    <xs:attribute name="Value" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Property" type="xs:string" use="required" />
+                              <xs:attribute name="Value" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="x:Key" use="required" />
+                  <xs:attribute name="TargetType" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Grid.ColumnDefinitions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="ColumnDefinition">
+                      <xs:complexType>
+                        <xs:attribute name="Width" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Grid.Background">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="LinearGradientBrush">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="GradientStop">
+                            <xs:complexType>
+                              <xs:attribute name="Color" type="xs:string" use="required" />
+                              <xs:attribute name="Offset" type="xs:decimal" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="EndPoint" type="xs:string" use="required" />
+                        <xs:attribute name="StartPoint" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Grid.Resources">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Style">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Setter">
+                            <xs:complexType>
+                              <xs:attribute name="Property" type="xs:string" use="required" />
+                              <xs:attribute name="Value" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="TargetType" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Button">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="StackPanel">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:choice maxOccurs="unbounded">
+                            <xs:element name="Path">
+                              <xs:complexType>
+                                <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                                <xs:attribute name="Margin" type="xs:string" use="required" />
+                                <xs:attribute name="Fill" type="xs:string" use="required" />
+                                <xs:attribute name="Data" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Image">
+                              <xs:complexType>
+                                <xs:attribute name="Source" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:choice>
+                        </xs:sequence>
+                        <xs:attribute name="Width" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Height" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Button.Resources">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Style">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Style.Triggers">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Trigger">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Trigger.EnterActions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="BeginStoryboard">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="Storyboard">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="DoubleAnimation">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Duration" type="xs:string" use="required" />
+                                                                  <xs:attribute name="From" type="xs:unsignedByte" use="required" />
+                                                                  <xs:attribute name="To" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="Storyboard.TargetProperty" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Trigger.ExitActions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="BeginStoryboard">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="Storyboard">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="DoubleAnimation">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Duration" type="xs:string" use="required" />
+                                                                  <xs:attribute name="From" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="To" type="xs:unsignedByte" use="required" />
+                                                                  <xs:attribute name="Storyboard.TargetProperty" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Property" type="xs:string" use="required" />
+                                          <xs:attribute name="Value" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="unbounded" name="Setter">
+                                  <xs:complexType>
+                                    <xs:attribute name="Property" type="xs:string" use="required" />
+                                    <xs:attribute name="Value" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="TargetType" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Button.BorderBrush">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SolidColorBrush">
+                            <xs:complexType>
+                              <xs:attribute name="Color" type="xs:string" use="required" />
+                              <xs:attribute name="Opacity" type="xs:decimal" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Button.Background">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LinearGradientBrush">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="GradientStop">
+                                  <xs:complexType>
+                                    <xs:attribute name="Color" type="xs:string" use="required" />
+                                    <xs:attribute name="Offset" type="xs:decimal" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="EndPoint" type="xs:string" use="required" />
+                              <xs:attribute name="MappingMode" type="xs:string" use="required" />
+                              <xs:attribute name="StartPoint" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Content" type="xs:string" use="optional" />
+                  <xs:attribute name="ToolTip" type="xs:string" use="optional" />
+                  <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Height" type="xs:decimal" use="required" />
+                  <xs:attribute name="Margin" type="xs:string" use="required" />
+                  <xs:attribute name="VerticalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Width" type="xs:decimal" use="required" />
+                  <xs:attribute name="Grid.Column" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Opacity" type="xs:decimal" use="required" />
+                  <xs:attribute name="RenderTransformOrigin" type="xs:string" use="required" />
+                  <xs:attribute name="FontFamily" type="xs:string" use="required" />
+                  <xs:attribute name="Foreground" type="xs:string" use="required" />
+                  <xs:attribute name="Template" type="xs:string" use="required" />
+                  <xs:attribute name="FontWeight" type="xs:string" use="optional" />
+                  <xs:attribute name="FontSize" type="xs:unsignedByte" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WebBrowser">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="WebBrowser.Effect">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DropShadowEffect">
+                            <xs:complexType>
+                              <xs:attribute name="Color" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="x:Name" use="required" />
+                  <xs:attribute name="Grid.ColumnSpan" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Height" type="xs:decimal" use="required" />
+                  <xs:attribute name="Margin" type="xs:string" use="required" />
+                  <xs:attribute name="VerticalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Width" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ListBox">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ListBox.Resources">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Style">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Style.Triggers">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Trigger">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Trigger.EnterActions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="BeginStoryboard">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="Storyboard">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="DoubleAnimation">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Duration" type="xs:string" use="required" />
+                                                                  <xs:attribute name="To" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="Storyboard.TargetProperty" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Trigger.ExitActions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="BeginStoryboard">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="Storyboard">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="DoubleAnimation">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Duration" type="xs:string" use="required" />
+                                                                  <xs:attribute name="To" type="xs:unsignedByte" use="required" />
+                                                                  <xs:attribute name="Storyboard.TargetProperty" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Property" type="xs:string" use="required" />
+                                          <xs:attribute name="Value" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Setter">
+                                  <xs:complexType>
+                                    <xs:attribute name="Property" type="xs:string" use="required" />
+                                    <xs:attribute name="Value" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="TargetType" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ListBox.Effect">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DropShadowEffect">
+                            <xs:complexType>
+                              <xs:attribute name="Color" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ListBox.ItemTemplate">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DataTemplate">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="StackPanel">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="TextBlock">
+                                        <xs:complexType>
+                                          <xs:attribute name="Text" type="xs:string" use="required" />
+                                          <xs:attribute name="FontSize" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="Grid.Row" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="TextWrapping" type="xs:string" use="optional" />
+                                          <xs:attribute name="Foreground" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="x:Name" use="required" />
+                  <xs:attribute name="ItemsSource" type="xs:string" use="required" />
+                  <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Height" type="xs:decimal" use="required" />
+                  <xs:attribute name="Margin" type="xs:string" use="required" />
+                  <xs:attribute name="VerticalAlignment" type="xs:string" use="required" />
+                  <xs:attribute name="Width" type="xs:decimal" use="required" />
+                  <xs:attribute name="Grid.ColumnSpan" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Opacity" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ShowGridLines" type="xs:string" use="required" />
+            <xs:attribute name="Margin" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Title" type="xs:string" use="required" />
+      <xs:attribute name="Height" type="xs:decimal" use="required" />
+      <xs:attribute name="Width" type="xs:unsignedShort" use="required" />
+      <xs:attribute name="ResizeMode" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

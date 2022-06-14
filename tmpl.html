@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script src="https://code.highcharts.com/modules/treemap.js"></script>
+		<style type="text/css">
+#container {
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+        </style>
+	</head>
+	<body>
+
+<div id="container"></div>
+
+<script type="text/javascript">
+Highcharts.chart('container', {
+    colorAxis: {
+        minColor: '#b8ff77',
+        maxColor: Highcharts.getOptions().colors[8]
+    },
+    series: [{
+        type: 'treemap',
+        layoutAlgorithm: 'squarified',
+        data: [     {         "temp":  null,         "name":  "Temp",         "value":  0.0725,         "colorValue":  0.0725     },     {         "temp":  null,         "name":  "Packages",         "value":  0.5604,         "colorValue":  0.5604     },     {         "temp":  null,         "name":  "Cache",         "value":  0.1889,         "colorValue":  0.1889     },     {         "temp":  null,         "name":  "Downloads",         "value":  8.7165,         "colorValue":  8.7165     },     {         "temp":  null,         "name":  "Pictures",         "value":  0.3556,         "colorValue":  0.3556     },     {         "temp":  null,         "name":  "Music",         "value":  0.054,         "colorValue":  0.054     },     {         "temp":  null,         "name":  "Desktop",         "value":  0.0001,         "colorValue":  0.0001     },     {         "temp":  null,         "name":  "Videos",         "value":  0.2285,         "colorValue":  0.2285     } ]
+    }],
+
+    "title":  {
+                  "text":  "Folders and directory sizes - (GB)"
+              }
+
+});
+		</script>
+	</body>
+</html>

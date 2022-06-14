@@ -1,0 +1,28 @@
+<script type="text/javascript">
+Highcharts.chart('container', {
+    series: [{
+        type: "treemap",
+        layoutAlgorithm: 'stripes',
+        turboThreshold:0,
+        alternateStartingDirection: true,
+        levels: [{
+            level: 1,
+            layoutAlgorithm: 'squarified',
+            layoutStartingDirection: 'horizontal',
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                verticalAlign: 'top',
+                style: {
+                    fontSize: '9px',
+                    fontWeight: 'bold'
+                }
+            }
+        }],
+        data:[{DATAINPUT}]
+    }],
+    title: {
+        text: "{LABELINPUT}"
+    }
+});
+</script>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/winfx/2006/xaml" />
+  <xs:element name="Window">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Window.Resources">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ControlTemplate">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Border">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ContentPresenter">
+                            <xs:complexType>
+                              <xs:attribute ref="x:Name" use="required" />
+                              <xs:attribute name="ContentTemplate" type="xs:string" use="required" />
+                              <xs:attribute name="Content" type="xs:string" use="required" />
+                              <xs:attribute name="ContentStringFormat" type="xs:string" use="required" />
+                              <xs:attribute name="Focusable" type="xs:string" use="required" />
+                              <xs:attribute name="HorizontalAlignment" type="xs:string" use="required" />
+                              <xs:attribute name="Margin" type="xs:string" use="required" />
+                              <xs:attribute name="RecognizesAccessKey" type="xs:string" use="required" />
+                              <xs:attribute name="SnapsToDevicePixels" type="xs:string" use="required" />
+                              <xs:attribute name="VerticalAlignment" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="x:Name" use="required" />
+                        <xs:attribute name="BorderBrush" type="xs:string" use="required" />
+                        <xs:attribute name="BorderThickness" type="xs:string" use="required" />
+                        <xs:attribute name="Background" type="xs:string" use="required" />
+                        <xs:attribute name="SnapsToDevicePixels" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ControlTemplate.Triggers">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Trigger">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Setter">
+                                  <xs:complexType>
+                                    <xs:attribute name="Property" type="xs:string" use="required" />
+                                    <xs:attribute name="TargetName" type="xs:string" use="optional" />
+                                    <xs:attribute name="Value" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Property" type="xs:string" use="required" />
+                              <xs:attribute name="Value" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="x:Key" use="required" />
+                  <xs:attribute name="TargetType" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Title" type="xs:string" use="required" />
+      <xs:attribute name="Height" type="xs:decimal" use="required" />
+      <xs:attribute name="Width" type="xs:unsignedShort" use="required" />
+      <xs:attribute name="ResizeMode" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
