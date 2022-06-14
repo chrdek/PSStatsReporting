@@ -28,4 +28,4 @@ __Prerequisites:__
 <br/>
 <br/>
 
- ![Default Screen Capture](https://github.com/chrdek/PSStatsReporting/gif/animation-demo.git =833x606)
+<img src="https://github.com/chrdek/PSStatsReporting/raw/main/gif/animation-demo.gif" alt="Default Screen Capture" data-canonical-src="https://github.com/chrdek/PSStatsReporting/raw/main/gif/animation-demo.gif" width="833" height="606" />
