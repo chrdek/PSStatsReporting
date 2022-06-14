@@ -5,40 +5,106 @@
  #  Includes utility classes with main functionality for scripts.
  #  
  #>
-Import-Module '.\DirSize.psm1'   -Force
-Import-Module '.\OtherInfo.psm1' -Force
-Import-Module '.\PartInfo.psm1'  -Force 
-Import-Module '.\ProceInfo.psm1' -Force 
+Import-Module -Force '.\DirSize.psm1'
+Import-Module -Force '.\OtherInfo.psm1'
+Import-Module -Force '.\PartInfo.psm1'
+Import-Module -Force '.\ProceInfo.psm1'
 
 
 <# Retrieve content for basic directories. #>
-Class MainModule {
-$_Cfg;
-$_Export;
-$_Content;
-MainModule() {
-  $this | Add-Member -MemberType ScriptProperty -Name Cfg     -Value  { return $this._Cfg }     -SecondValue { param($Value)$this._Cfg = $Value }
-  $this | Add-Member -MemberType ScriptProperty -Name Export  -Value  { return $this._Export }  -SecondValue { param($Value)$this._Export = $Value }
-  $this | Add-Member -MemberType ScriptProperty -Name Content -Value  { return $this._Content } -SecondValue { param($Value)$this._Content = $Value }
-  }
+Class DirectoryModule {
+    $dirconfig
+    $exdirinfo
+    $dirgenOutput
+
+   DirectoryModule() {
+
+    $this.dirconfig           =      $Global:DirSize.validateCfg();
+    $this.exdirinfo           =      $Global:DirSize.exportInfo();
+    $this.dirgenOutput        =      $Global:DirSize.genContentWithTitle();
+
+    }
 }
 
-<# All steps of core functions are performed here. #>
-function infoRetrieval([Parameter(Mandatory=$false)][int]$r) {
 
-$mainCaller = [MainModule]::new();
+<# Retrieve content for local installs. #>
+Class ProgramsModule {
+    $programconfig
+    $exprograminfo
+    $programgenOutput
 
-(Get-Variable  -Include *Info,*Size* -Scope Global -OutVariable "mod_vars") | %{
-$mainCaller._Cfg = $_.Value.validateCfg();
-$mainCaller._Cfg;
+   ProgramsModule() {
 
-$mainCaller._Export = $_.Value.exportInfo();
-$mainCaller._Export;
+    $this.programconfig        =      $Global:OtherInfo.validateCfg();
+    $this.exprograminfo        =      $Global:OtherInfo.exportInfo();
+    $this.programgenOutput     =      $Global:OtherInfo.genContentWithTitle();
 
-$mainCaller._Content = $_.Value.genContentWithTitle();
-$mainCaller._Content;
+    }
+
  }
- if ($r -ne  $null) { $mod_vars[$($r)].Value.genContentWithTitle(); }
+
+
+<# Retrieve content of local disk partitions. #>
+ Class PartitionModule {
+    $partconfig
+    $expartinfo
+    $partgenOutput
+
+  PartitionModule() {
+
+    $this.partconfig           =      $Global:PartInfo.validateCfg();
+    $this.expartinfo           =      $Global:PartInfo.exportInfo();
+    $this.partgenOutput        =      $Global:PartInfo.genContentWithTitle();
+
+    }
+ 
+ }
+
+
+<# Retrieve content of system processes. #>
+ Class ProcessModule {
+    $processconfig
+    $exprocessinfo
+    $processgenOutput
+
+ ProcessModule() {
+
+    $this.processconfig        =     $Global:ProceInfo.validateCfg();
+    $this.exprocessinfo        =     $Global:ProceInfo.exportInfo();
+    $this.processgenOutput     =     $Global:ProceInfo.genContentWithTitle();
+
+   }
+
+ }
+
+
+
+function getDirectorySizes() {
+  $directSizes = [DirectoryModule]::new();
+  $directSizes.dirconfig;
+  $directSizes.exdirinfo;
+  $directSizes.dirgenOutput;
+}
+
+function getOtherSizes() {
+  $otherSizes = [ProgramsModule]::new();
+  $otherSizes.programconfig;
+  $otherSizes.exprograminfo;
+  $otherSizes.programgenOutput;
+}
+
+function getPartitionSizes() {
+  $partSizes = [PartitionModule]::new();
+  $partSizes.partconfig;
+  $partSizes.expartinfo;
+  $partSizes.partgenOutput;
+}
+
+function getProcessSizes() {
+  $procSizes = [ProcessModule]::new();
+  $procSizes.processconfig;
+  $procSizes.exprocessinfo;
+  $procSizes.processgenOutput;
 }
 
 Export-ModuleMember -Function '*'

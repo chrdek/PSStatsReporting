@@ -1,5 +1,4 @@
-<#using module '.\mainapp.psm1'#>
-using module '.\mainappscen2.psm1'
+using module '.\mainapp.psm1'
 
 Try {
 Add-Type -AssemblyName PresentationFramework
@@ -10,11 +9,8 @@ Add-Type -AssemblyName System.Windows.Forms
 ".\ImagesUtil.psm1"
 ) | %{ Import-Module $_ -Force }
 
-## -CodeCoverage @{ Path = "DirSize.psm1"}; -CodeCoverage @{ Path = "OtherInfo.psm1"};
-#Invoke-Pester -Script "$env:USERPROFILE\Downloads\Tests1\MainPart.Tests.ps1" -OutputFile ".\Test-Log.xml" -OutputFormat NUnitXml;
-#Invoke-Pester -Script "$env:USERPROFILE\Downloads\Tests1\Output.Tests.ps1" -OutputFile ".\Test-Log.xml" -OutputFormat NUnitXml;
-#Invoke-Pester -Script "$env:USERPROFILE\Downloads\Tests1\XamlLayout.Tests.ps1"
-#. ".\gen-doc.ps1"
+
+. ".\gen-doc.ps1"
 }
 Catch {
 Write-Error "Error On Loading types or executing scripts." -ErrorAction Stop;
