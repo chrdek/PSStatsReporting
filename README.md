@@ -4,6 +4,7 @@
  __Core Features:__
 - Built-in internal browser component (IE11 support).
 - Built-in CHM Help file documenter for loaded .psm1 modules and classes.
+- Built-in self-checks for UI.
 - Sleek WPF/XAML-based user interface [(UI Designed on Blend for VS 2017)](https://docs.microsoft.com/en-us/visualstudio/xaml-tools/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2022).
 - Azure function and AWS Lambda example invocations.
 
@@ -17,7 +18,7 @@ __Prerequisites:__
 3. You will need to install modules [AzFnUtil](https://www.powershellgallery.com/packages/AzFnUtil/1.0.1), [LmbdUtil](https://www.powershellgallery.com/packages/LmbdUtil/1.0.1), [ImageUtils](https://www.powershellgallery.com/packages/ImagesUtil/1.1.0.0), [PSParallel](https://www.powershellgallery.com/packages/PSParallel/2.2.2) for the complete application to operate properly.
 <br>
 
-To Install Run from powershell command line:
+To Install a module, run from powershell command line:
 ```powershell
 PS> Install-Module -Name <ModuleName>
 ```
