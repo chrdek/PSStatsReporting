@@ -5,6 +5,7 @@
 - Built-in internal browser component (IE11 support).
 - Built-in CHM Help file documenter for loaded .psm1 modules and classes.
 - Built-in self-checks for UI.
+- Individual test runners.
 - Sleek WPF/XAML-based user interface [(UI Designed on Blend for VS 2017)](https://docs.microsoft.com/en-us/visualstudio/xaml-tools/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2022).
 - Azure function and AWS Lambda example invocations.
 
